@@ -23,12 +23,16 @@ int main(int argc, const char * argv[]) {
     }
     
     if(stat(argv[1], &st) != 0) {
-        std::cerr << "Erro!" << endl;
+        std::cerr << "Nao foi possivel executar a operacao!" << endl;
         return 1;
     }
-    std::cout << "\n Arquivo: " << argv[1] << endl;
-    std::cout << "\n Tamanho arquivo: " << st.st_size << endl;
-    std::cout << "\n Num de blocos de 512: " << st.st_blocks << endl;
+
+    if(st.st_size > (st.st_blocks * 512)){
+    	std::cout << "ESPARSO" << endl;
+    } else {
+    	std::cout << "REGULAR" << endl;
+    }
+
     
     return 0;
 }
