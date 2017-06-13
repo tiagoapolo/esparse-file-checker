@@ -11,7 +11,7 @@ g++ main.cpp -o sparse_checker
 sparse_checker [PATH_TO_FILE]
 ```
 
-## You can test with the 2 examples in this repo:
+## You can test against the examples in this repo:
 
 This will output in the console **'ESPARSO'**
 ```
